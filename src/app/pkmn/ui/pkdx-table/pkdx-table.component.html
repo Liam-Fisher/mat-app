@@ -1,0 +1,37 @@
+
+<div id="pkdx-table">
+    <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Pikachu" #input>
+  </mat-form-field>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="index">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+        <td mat-cell *matCellDef="let pkmn"> #{{pkmn.index}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let pkmn"> {{pkmn.name}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        (pointerdown)="clickedRow.emit(['view', row.index, row.name])"
+        *matRowDef="let row; columns: displayedColumns;"
+    ></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[1]"
+                   showFirstLastButtons
+                   aria-label="Select pokedex page">
+    </mat-paginator>
+  </div>
+</div>
+    

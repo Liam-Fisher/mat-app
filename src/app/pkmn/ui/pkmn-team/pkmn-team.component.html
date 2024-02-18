@@ -1,0 +1,15 @@
+
+<div id="team-builder">
+    <div
+    cdkDropList
+    id="selected-team-viewport"
+    #activeTeam="cdkDropList"
+    class="active-team"
+    [cdkDropListData]="team"
+    (cdkDropListDropped)="shuffleTeam($event)"
+  >
+    <div  class="team-member" *ngFor="let item of team; let i = index" cdkDrag>
+      <app-pkmn-view (remover)="removeFromSlot(i)" [data]="item ?? null" [info]="(i+1)+':'"></app-pkmn-view>
+    </div>
+  </div>
+  </div>

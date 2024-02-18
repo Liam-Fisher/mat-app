@@ -1,0 +1,6 @@
+<app-source-device-selection-menu *ngIf="audioLoaded" [deviceList]="deviceList | async" (deviceSelected)="loadDevice($event)"></app-source-device-selection-menu>
+  <button *ngIf="!audioLoaded" mat-button (click)="loadAudio()">Load</button>
+  <button *ngIf="audioLoaded" mat-button (click)="testAudio()">Test</button>
+  <div *ngIf="audioLoaded" class="activeDeviceDisplay">
+    <app-rnbo-device [id]="active_id"></app-rnbo-device>
+</div>

@@ -1,0 +1,37 @@
+<button *ngIf="preload" mat-button (click)="load()">Load</button>
+<div *ngIf="loaded|async" class="activeDeviceDisplay">
+<h3>{{ id }}</h3>
+<div class="device-ui">
+  <div
+    *ngFor="let parameter of params; let i = index"
+  >
+    <app-parameter-ui
+      [device_id]="id"
+      [parameter]="parameter"
+      [precision]="4"
+      [isNormalized]="false"
+      (update)="updateParameter($event, i)"
+    ></app-parameter-ui>
+  </div>
+  <div class="device-inport-container">
+    <app-inport-ui
+      [device_id]="id"
+      [inportInfo]="inports"
+      (send)="sendMessage($event)"
+    >
+    </app-inport-ui>
+  </div>
+</div>
+<div id="testInput">
+  <button (click)="loadCries()">loadCries</button>
+  <!--
+  <form [formGroup]="testCmd">
+    <mat-form-field class="message-input">
+      <mat-label>input cmd</mat-label>
+      <input matInput formControlName="cmd">
+    </mat-form-field>
+    <button mat-button (click)="execute()">Send</button>
+  </form>
+  -->
+</div>
+</div>

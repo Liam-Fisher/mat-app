@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "singular-array-387200": {
+      "hosting": {
+        "mat-app": [
+          "fun-with-dsp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "singular-array-387200"
+  }
+}
