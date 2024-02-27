@@ -27,9 +27,15 @@ Click the "create" button to load the path in RNBO, or "clear" to remove it.
 ### Finally...
 Clicking the "play" button will play the cries, filtered through the Web Audio API "PannerNode", as the sound source moves along the path drawn on the canvas.
 
-### Notes
-Fair warning, this is not as realistic as I had originally hoped. Most of the pokemon cries are in low resolution buffers, and the PannerNode leaves much to be desired in terms of realism.
+## Notes
+
+### 3D spatialization
+Fair warning, this is not as spectacularly immersive as I had originally dreamed. Most of the pokemon cries are in low resolution buffers, and the PannerNode leaves much to be desired in terms of realism.
 To experiment with more realistic 3d sound-in-motion, check out the "HRTF" device in [this repo](https://github.com/Liam-Fisher/MiscM4L) for Ableton Live M4L devices.
+
+### Miscellaneous RNBO code
+I tested a handful of approaches to creating this project, eventually settling down into making it a (somewhat) simple demo. The rnbo module contains a few component implementations that might be useful to someone creating a project with RNBO/Angular (most likely my future self).
+
 
 
 
